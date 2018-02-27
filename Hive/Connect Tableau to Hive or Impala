@@ -1,0 +1,35 @@
+Prerequisite: Download the SSL Certificate
+
+Download the Hortonworks ODBC Driver for Apache Hive 
+from https://hortonworks.com/downloads/#addons. 
+Next, extract and install the driver.
+
+Check whether your odbc driver version correct? 
+  Cloudera ODBC driver 2.5.28 does not support Tableau with Impala.
+Did you choose the right port number or login type? 
+  Impala port number is 21000 and 21050. Hive is 10000.
+
+Launch Tableau. 
+If you do not already have Tableau, you can download a trial version from https://www.tableau.com/trial/download-tableau.
+
+In Tableau, create a connection to a “Hortonworks Hadoop Hive” server. Enter the following:
+
+Property::	Value
+Server::	Enter the public hostname of your controller node instance.
+Port::	443
+Type::	HiveServer2
+Authentication::	Username and Password
+Transport:: HTTP
+Username::	Enter the cluster username created when creating your cluster
+Password::	Enter the cluster password created when creating your cluster
+HTTP Path::	${CLUSTER_NAME}/services/hive
+
+
+Check the Require SSL checkbox.
+
+Click on the text underneath the checkbox to add a configuration file link.
+
+Specify to use a custom SSL certificate, and then browse to the SSL certificate gateway.pem file 
+that was generated when you downloaded the SSL certificate as a prerequisite.
+
+Click OK.
