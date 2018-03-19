@@ -12,3 +12,5 @@ sqoop export \
 
 Note: –export-dir argument specifies the location of hive source directory, not individual filename. –fields-terminated-by ‘\001’ must be included in the command. Otherwise, you will see the following error:
 Caused by: java.lang.RuntimeException: Can’t parse input data: ‘SYSTEMLOGMNR_REFCON$7604TABLE2013-03-12’
+
+Step 3: Verufy data in Exadata
