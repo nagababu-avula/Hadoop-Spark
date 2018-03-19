@@ -1,7 +1,10 @@
 #Import to S3
 
 
-sqoop import --connect jdbc:postgresql://<IP>:5432/test 
-    --username gpadmin --P --query "<query>" \ -delete-target-dir 
-    --target-dir s3a://test-bucket/sqoop-load/ \ --fields-terminated-by '\001' 
-    --hive-delims-replacement \"SPECIAL\" \ -m 1
+sqoop import \
+    --connect jdbc:postgresql://<IP>:5432/test \
+    --username gpadmin --P \
+    --query "<query>" -delete-target-dir \
+    --target-dir s3a://test-bucket/sqoop-load/ \
+    --fields-terminated-by '\001' \
+    --hive-delims-replacement "SPECIAL\" -m 1
